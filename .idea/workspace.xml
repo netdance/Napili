@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c08959c9-6b46-4507-a681-3cb1f28aff46" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/netdance/napili/NapiliMenuBar.java" afterPath="$PROJECT_DIR$/src/org/netdance/napili/NapiliMenuBar.java" />
     </list>
     <ignored path="Napili.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -187,19 +186,19 @@
       <file leaf-file-name="NapiliMenuBar.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/NapiliMenuBar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="28" selection-start="2923" selection-end="2923" vertical-scroll-proportion="1.0232018">
+            <state line="85" column="28" selection-start="2924" selection-end="2924" vertical-scroll-proportion="1.0232018">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#961#1131#0" expanded="true" />
                 <element signature="e#1120#1121#0" expanded="true" />
                 <element signature="e#1164#1334#0" expanded="true" />
                 <element signature="e#1323#1324#0" expanded="true" />
-                <element signature="e#1608#2708#0" expanded="true" />
-                <element signature="e#2697#2698#0" expanded="true" />
-                <element signature="e#2741#3814#0" expanded="true" />
-                <element signature="e#3421#3623#0" expanded="true" />
-                <element signature="e#3604#3605#0" expanded="true" />
-                <element signature="e#3803#3804#0" expanded="true" />
+                <element signature="e#1608#2709#0" expanded="true" />
+                <element signature="e#2698#2699#0" expanded="true" />
+                <element signature="e#2742#3815#0" expanded="true" />
+                <element signature="e#3422#3624#0" expanded="true" />
+                <element signature="e#3605#3606#0" expanded="true" />
+                <element signature="e#3804#3805#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -656,7 +655,11 @@
       <created>1345319968951</created>
       <updated>1345319968951</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Modify help layout">
+      <created>1345320705236</created>
+      <updated>1345320705236</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -722,7 +725,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modify help layout" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -736,6 +739,7 @@
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="Initial commit" />
+    <MESSAGE value="Modify help layout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -840,19 +844,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/NapiliMenuBar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="28" selection-start="2923" selection-end="2923" vertical-scroll-proportion="1.0232018">
+        <state line="85" column="28" selection-start="2924" selection-end="2924" vertical-scroll-proportion="1.0232018">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#961#1131#0" expanded="true" />
             <element signature="e#1120#1121#0" expanded="true" />
             <element signature="e#1164#1334#0" expanded="true" />
             <element signature="e#1323#1324#0" expanded="true" />
-            <element signature="e#1608#2708#0" expanded="true" />
-            <element signature="e#2697#2698#0" expanded="true" />
-            <element signature="e#2741#3814#0" expanded="true" />
-            <element signature="e#3421#3623#0" expanded="true" />
-            <element signature="e#3604#3605#0" expanded="true" />
-            <element signature="e#3803#3804#0" expanded="true" />
+            <element signature="e#1608#2709#0" expanded="true" />
+            <element signature="e#2698#2699#0" expanded="true" />
+            <element signature="e#2742#3815#0" expanded="true" />
+            <element signature="e#3422#3624#0" expanded="true" />
+            <element signature="e#3605#3606#0" expanded="true" />
+            <element signature="e#3804#3805#0" expanded="true" />
           </folding>
         </state>
       </provider>
