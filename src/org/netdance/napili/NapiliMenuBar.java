@@ -14,7 +14,6 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import javafx.scene.web.HTMLEditor;
 import javafx.stage.Stage;
 import org.netdance.napili.resources.AboutText;
 import org.netdance.napili.resources.HelpText;
@@ -55,11 +54,15 @@ public class NapiliMenuBar extends MenuBar {
         aboutItem.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent evt) {
+
+                final double DISPLAYWIDTH = Napili.DRAWX;
+                final double DISPLAYHEIGHT = Napili.DRAWY;
+
                 final Stage aboutStage = new Stage();
                 aboutStage.setTitle("Hey there");
                 VBox aboutPane = new VBox();
                 aboutPane.setAlignment(Pos.CENTER);
-                Text aboutText = new Text((String)AboutText.TEXT);
+                Text aboutText = new Text((String) AboutText.TEXT);
                 aboutPane.getChildren().add(aboutText);
                 Button exitButton = new Button("Exit");
                 aboutPane.getChildren().add(exitButton);
@@ -69,7 +72,7 @@ public class NapiliMenuBar extends MenuBar {
                         aboutStage.close();
                     }
                 });
-                Scene aboutScene = new Scene(aboutPane, Napili.DRAWX, Napili.DRAWY);
+                Scene aboutScene = new Scene(aboutPane, DISPLAYWIDTH, DISPLAYHEIGHT);
                 aboutStage.setScene(aboutScene);
                 aboutStage.show();
             }
@@ -78,12 +81,16 @@ public class NapiliMenuBar extends MenuBar {
         helpItem.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent t) {
+
+                final double DISPLAYWIDTH = 500;
+                final double DISPLAYHEIGHT = 700;
+
                 final Stage helpStage = new Stage();
                 helpStage.setTitle("Here's some help");
                 VBox helpPane = new VBox();
                 helpPane.setAlignment(Pos.CENTER);
-                Text aboutText = new Text((String) HelpText.TEXT);
-                helpPane.getChildren().add(aboutText);
+                Text helpText = new Text((String) HelpText.TEXT);
+                helpPane.getChildren().add(helpText);
                 Button exitButton = new Button("Exit");
                 helpPane.getChildren().add(exitButton);
                 exitButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -92,7 +99,7 @@ public class NapiliMenuBar extends MenuBar {
                         helpStage.close();
                     }
                 });
-                Scene helpScene = new Scene(helpPane, Napili.DRAWX, Napili.DRAWY);
+                Scene helpScene = new Scene(helpPane, DISPLAYWIDTH, DISPLAYHEIGHT);
                 helpStage.setScene(helpScene);
                 helpStage.show();
             }
