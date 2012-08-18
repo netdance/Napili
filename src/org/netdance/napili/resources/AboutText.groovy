@@ -2,8 +2,6 @@
  * Copyright (c) 2012. by James G Driscoll.  All rights reserved.
  */
 
-
-
 package org.netdance.napili.resources
 
 class AboutText {
