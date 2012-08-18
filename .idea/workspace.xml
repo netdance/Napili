@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c08959c9-6b46-4507-a681-3cb1f28aff46" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/jidrisc.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/jidrisc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy" afterPath="$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy" afterPath="$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/netdance/napili/Turtle.groovy" afterPath="$PROJECT_DIR$/src/org/netdance/napili/Turtle.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/netdance/napili/language/BasicRunner.groovy" afterPath="$PROJECT_DIR$/src/org/netdance/napili/language/BasicRunner.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/netdance/napili/language/TurtleDelegateBaseScript.groovy" afterPath="$PROJECT_DIR$/src/org/netdance/napili/language/TurtleDelegateBaseScript.groovy" />
     </list>
     <ignored path="Napili.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -124,16 +124,16 @@
       <file leaf-file-name="HelpText.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0">
+            <state line="9" column="8" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AboutText.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AboutText.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="167" selection-end="167" vertical-scroll-proportion="0.29801324">
+            <state line="9" column="8" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -142,7 +142,7 @@
       <file leaf-file-name="BasicRunner.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/language/BasicRunner.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="53" column="0" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#114#170#0" expanded="true" />
               </folding>
@@ -150,10 +150,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TurtleDelegateBaseScript.groovy" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="TurtleDelegateBaseScript.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/language/TurtleDelegateBaseScript.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0">
+            <state line="11" column="76" selection-start="348" selection-end="348" vertical-scroll-proportion="0.3642384">
               <folding />
             </state>
           </provider>
@@ -176,7 +176,7 @@
       <file leaf-file-name="Turtle.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Turtle.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="6" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
+            <state line="41" column="49" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#103#135#0" expanded="true" />
               </folding>
@@ -205,14 +205,14 @@
         <option value="$PROJECT_DIR$/src/org/netdance/napili/samples/Flower.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/samples/SampleList.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/samples/Spirograph.groovy" />
-        <option value="$PROJECT_DIR$/src/org/netdance/napili/Turtle.groovy" />
-        <option value="$PROJECT_DIR$/src/org/netdance/napili/language/TurtleDelegateBaseScript.groovy" />
-        <option value="$PROJECT_DIR$/src/org/netdance/napili/language/BasicRunner.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/NapiliMenuBar.java" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/NapiliFile.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/Napili.java" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy" />
+        <option value="$PROJECT_DIR$/src/org/netdance/napili/Turtle.groovy" />
+        <option value="$PROJECT_DIR$/src/org/netdance/napili/language/BasicRunner.groovy" />
+        <option value="$PROJECT_DIR$/src/org/netdance/napili/language/TurtleDelegateBaseScript.groovy" />
       </list>
     </option>
   </component>
@@ -638,7 +638,11 @@
       <created>1345321042474</created>
       <updated>1345321042474</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Formatting changes">
+      <created>1345321137441</created>
+      <updated>1345321137441</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -704,7 +708,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Javadoc updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Formatting changes" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -721,6 +725,7 @@
     <MESSAGE value="Modify help layout" />
     <MESSAGE value="workspace" />
     <MESSAGE value="Javadoc updates" />
+    <MESSAGE value="Formatting changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -753,22 +758,6 @@
     <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/samples/Flower.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="3" selection-start="72" selection-end="72" vertical-scroll-proportion="0.021802325">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/language/BasicRunner.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#114#170#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/language/TurtleDelegateBaseScript.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -811,18 +800,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Turtle.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="6" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#103#135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/dictionaries/jidrisc.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="8" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="8" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -839,16 +833,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy">
+    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Turtle.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="41" column="49" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#103#135#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy">
+    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/language/BasicRunner.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="167" selection-end="167" vertical-scroll-proportion="0.29801324">
+        <state line="53" column="0" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#114#170#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/language/TurtleDelegateBaseScript.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="76" selection-start="348" selection-end="348" vertical-scroll-proportion="0.3642384">
           <folding />
         </state>
       </provider>
