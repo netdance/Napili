@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Napili:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/</output-path>
+    <root id="archive" name="Napili.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="Napili" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../groovy-2.0.1/embeddable/groovy-all-2.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="/Library/Java/JavaVirtualMachines/jdk1.7.0_06.jdk/Contents/Home/jre/lib/jfxrt.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
