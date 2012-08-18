@@ -51,6 +51,8 @@ class BasicRunner {
             if (name == 'turtle') {
                 return turtle;
             }
+
+            // treat all no-arg methods on Turtle as binding variables with side effects
             if (turtle.metaClass.respondsTo(turtle, name)) {
                 return turtle."$name"()
             }

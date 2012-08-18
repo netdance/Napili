@@ -39,6 +39,7 @@ class Turtle {
             return this;
         }
 
+        // treat all no-arg methods as properties
         if (this.metaClass.respondsTo(this, name)) {
             return this."$name"()
         }
@@ -135,7 +136,7 @@ class Turtle {
     }
 
     private def draw(double x0, double y0, double x1, double y1) {
-        double distance = Math.sqrt(Math.pow((x1 - x0),2) + Math.pow((y1 - y0),2) );
+        double distance = Math.sqrt(Math.pow((x1 - x0), 2) + Math.pow((y1 - y0), 2));
         Line line = new Line(x0, y0, x0, y0);
         Timeline timeline = new Timeline();
         line.setStroke(Color.TRANSPARENT);
