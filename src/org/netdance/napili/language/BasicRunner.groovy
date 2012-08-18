@@ -4,10 +4,6 @@
 
 
 
-
-
-
-
 package org.netdance.napili.language
 
 import org.codehaus.groovy.control.CompilerConfiguration
@@ -37,37 +33,37 @@ class BasicRunner {
     }
 
 
-private static class BasicBinding extends Binding {
+    private static class BasicBinding extends Binding {
 
-    Turtle turtle
-    Napili napili
+        Turtle turtle
+        Napili napili
 
-    public BasicBinding(Napili napili) {
-        super();
-        turtle = new Turtle(napili)
-        this.napili = napili
+        public BasicBinding(Napili napili) {
+            super();
+            turtle = new Turtle(napili)
+            this.napili = napili
+        }
+
+        public Object getVariable(String name) {
+            if (name == 'out') {
+                return napili.getPrintWriter();
+            }
+            if (name == 'turtle') {
+                return turtle;
+            }
+            if (turtle.metaClass.respondsTo(turtle, name)) {
+                return turtle."$name"()
+            }
+            return super.getVariable(name);
+        }
+
+        public void setVariable(String name, Object value) {
+            if ("turtle".equals(name)) {
+                napili.println('Unable to set "turtle" to value' + value)
+                return;
+            }
+            super.setVariable(name, value);
+        }
+
     }
-
-    public Object getVariable(String name) {
-        if (name == 'out') {
-            return napili.getPrintWriter();
-        }
-        if (name == 'turtle') {
-            return turtle;
-        }
-        if (turtle.metaClass.respondsTo(turtle, name)) {
-            return turtle."$name"()
-        }
-        return super.getVariable(name);
-    }
-
-    public void setVariable(String name, Object value) {
-        if ("turtle".equals(name)) {
-            napili.println('Unable to set "turtle" to value' + value )
-            return;
-        }
-        super.setVariable(name, value);
-    }
-
-}
 }

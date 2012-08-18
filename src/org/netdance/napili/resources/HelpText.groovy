@@ -2,12 +2,14 @@
  * Copyright (c) 2012. by James G Driscoll.  All rights reserved.
  */
 
+
+
 package org.netdance.napili.resources
 
 class HelpText {
 
     public static final def TEXT =
-"""
+        """
 The following commands are supported for using the turtle to draw
 lines on the screen:
 
@@ -32,6 +34,8 @@ back - move the turtle backward, takes an argument that is the number
 show - show the turtle
 hide - hide the turtle (it's still there, and will still draw, you
     just can't see it)
+speed - the speed that the turtle draws.  Takes one numeric argument,
+    higher is faster
 
 All of Groovy's command structures are available by default - if/else,
     while, for, etc.
