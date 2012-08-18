@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c08959c9-6b46-4507-a681-3cb1f28aff46" name="Default" comment="">
+    <list default="true" id="c08959c9-6b46-4507-a681-3cb1f28aff46" name="Default" comment="Doc additions">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/netdance/napili/Turtle.groovy" afterPath="$PROJECT_DIR$/src/org/netdance/napili/Turtle.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/netdance/napili/language/BasicRunner.groovy" afterPath="$PROJECT_DIR$/src/org/netdance/napili/language/BasicRunner.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/netdance/napili/Napili.java" afterPath="$PROJECT_DIR$/src/org/netdance/napili/Napili.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/netdance/napili/language/TurtleDelegateBaseScript.groovy" afterPath="$PROJECT_DIR$/src/org/netdance/napili/language/TurtleDelegateBaseScript.groovy" />
     </list>
     <ignored path="Napili.iws" />
@@ -121,30 +120,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HelpText.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy">
+      <file leaf-file-name="Napili.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Napili.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="8" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AboutText.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="8" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicRunner.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/language/BasicRunner.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="0" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.0">
+            <state line="168" column="51" selection-start="5185" selection-end="5185" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#114#170#0" expanded="true" />
+                <element signature="e#5544#5762#0" expanded="true" />
+                <element signature="e#5751#5752#0" expanded="true" />
+                <element signature="e#6428#7348#0" expanded="true" />
+                <element signature="e#7337#7338#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,33 +137,8 @@
       <file leaf-file-name="TurtleDelegateBaseScript.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/language/TurtleDelegateBaseScript.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="76" selection-start="348" selection-end="348" vertical-scroll-proportion="0.3642384">
+            <state line="13" column="15" selection-start="407" selection-end="407" vertical-scroll-proportion="0.43046358">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Napili.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Napili.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="0" selection-start="4140" selection-end="4140" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#4559#4777#0" expanded="true" />
-                <element signature="e#4766#4767#0" expanded="true" />
-                <element signature="e#5443#6363#0" expanded="true" />
-                <element signature="e#6352#6353#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Turtle.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Turtle.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="49" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#103#135#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -207,12 +166,12 @@
         <option value="$PROJECT_DIR$/src/org/netdance/napili/samples/Spirograph.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/NapiliMenuBar.java" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/NapiliFile.groovy" />
-        <option value="$PROJECT_DIR$/src/org/netdance/napili/Napili.java" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/Turtle.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/language/BasicRunner.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/language/TurtleDelegateBaseScript.groovy" />
+        <option value="$PROJECT_DIR$/src/org/netdance/napili/Napili.java" />
       </list>
     </option>
   </component>
@@ -642,8 +601,36 @@
       <created>1345321137441</created>
       <updated>1345321137441</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Doc additions">
+      <created>1345321404961</created>
+      <updated>1345321404961</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Doc additions">
+      <created>1345321427856</created>
+      <updated>1345321427856</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="26" y="57" width="1462" height="836" extended-state="0" />
@@ -658,7 +645,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867134" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867134" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867134" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18175389" sideWeight="0.27552447" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -708,7 +695,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Formatting changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Doc additions" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -726,6 +713,7 @@
     <MESSAGE value="workspace" />
     <MESSAGE value="Javadoc updates" />
     <MESSAGE value="Formatting changes" />
+    <MESSAGE value="Doc additions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -821,21 +809,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Napili.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="0" selection-start="4140" selection-end="4140" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#4559#4777#0" expanded="true" />
-            <element signature="e#4766#4767#0" expanded="true" />
-            <element signature="e#5443#6363#0" expanded="true" />
-            <element signature="e#6352#6353#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Turtle.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="49" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.0">
+        <state line="41" column="49" selection-start="1158" selection-end="1158" vertical-scroll-proportion="1.0596026">
           <folding>
             <element signature="e#103#135#0" expanded="true" />
           </folding>
@@ -844,16 +820,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/language/BasicRunner.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="0" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.0">
+        <state line="53" column="0" selection-start="1564" selection-end="1564" vertical-scroll-proportion="1.5231788">
           <folding>
             <element signature="e#114#170#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Napili.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="168" column="51" selection-start="5185" selection-end="5185" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#5544#5762#0" expanded="true" />
+            <element signature="e#5751#5752#0" expanded="true" />
+            <element signature="e#6428#7348#0" expanded="true" />
+            <element signature="e#7337#7338#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/language/TurtleDelegateBaseScript.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="76" selection-start="348" selection-end="348" vertical-scroll-proportion="0.3642384">
+        <state line="13" column="15" selection-start="407" selection-end="407" vertical-scroll-proportion="0.43046358">
           <folding />
         </state>
       </provider>

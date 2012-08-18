@@ -108,31 +108,66 @@ public class Napili extends Application {
         primaryStage.show();
     }
 
+    /**
+     * Add a node to the drawing area.  Used primarily to add Line Objects.
+     *
+     * @param node - Node to add to drawing area
+     */
     public void addNode(javafx.scene.Node node) {
         drawGroup.getChildren().add(node);
     }
 
+    /**
+     * Add an Animation to the Sequential animation list for later playback
+     *
+     * @param animation Animation to add
+     */
     public void addAnimation(Animation animation) {
         play.getChildren().add(animation);
     }
 
+    /**
+     * Print a line to the output area
+     *
+     * @param str String to print
+     */
     public void println(String str) {
         out.println(str);
         System.out.println(str);
     }
 
+    /**
+     * Get the PrintWriter which will be used to write to the output area
+     *
+     * @return PrintWriter used to write to the output area
+     */
     public PrintWriter getPrintWriter() {
         return out;
     }
 
+    /**
+     * Set the value of the user code area to a script
+     *
+     * @param script String to set the code area to
+     */
     public void setCode(String script) {
         code.setText(script);
     }
 
+    /**
+     * Get the current value of the user code area - the script the user typed in
+     *
+     * @return The script contained in the user code area
+     */
     public String getCode() {
         return code.getText();
     }
 
+    /**
+     * Get the primary Stage of the application - needed to open new stages
+     *
+     * @return The primary Stage of the application
+     */
     public Stage getPrimaryStage() {
         return primaryStage;
     }

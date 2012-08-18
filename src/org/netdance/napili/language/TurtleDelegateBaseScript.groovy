@@ -5,7 +5,7 @@
 package org.netdance.napili.language
 
 /**
- * Basescript which simply looks for any unfound method calls on the Turtle object in binding
+ * BaseScript which simply looks for any missing method calls on the Turtle object in binding
  */
 abstract class TurtleDelegateBaseScript extends Script {
 
