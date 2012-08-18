@@ -9,9 +9,16 @@ import javafx.stage.FileChooser
 import java.nio.file.Files
 import java.nio.file.Path
 
+/**
+ * Abstraction class to hold the save and load logic of Napili
+ */
 class NapiliFile {
 
-    static load(Napili napili) {
+    /**
+     * Load the contents of user's code from a file, as specified in the FileChooser
+     * @param napili Main Napili program code
+     */
+    static void load(Napili napili) {
         FileChooser chooser = new FileChooser();
         File file = chooser.showOpenDialog(napili.primaryStage);
         if (file == null) return;
@@ -30,7 +37,11 @@ class NapiliFile {
         }
     }
 
-    static save(Napili napili) {
+    /**
+     * Save the contents of the user's code to a file, as specified in the FileChooser
+     * @param napili
+     */
+    static void save(Napili napili) {
         FileChooser chooser = new FileChooser();
         File file = chooser.showSaveDialog(napili.primaryStage);
         if (file == null) return;

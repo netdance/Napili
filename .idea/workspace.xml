@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c08959c9-6b46-4507-a681-3cb1f28aff46" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/netdance/napili/Napili.java" afterPath="$PROJECT_DIR$/src/org/netdance/napili/Napili.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/netdance/napili/NapiliFile.groovy" afterPath="$PROJECT_DIR$/src/org/netdance/napili/NapiliFile.groovy" />
     </list>
     <ignored path="Napili.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -156,49 +158,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Napili.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Napili.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Napili.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="13" selection-start="997" selection-end="997" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NapiliButtonBar.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/NapiliButtonBar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NapiliFile.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/NapiliFile.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="6" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NapiliMenuBar.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/NapiliMenuBar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="28" selection-start="2924" selection-end="2924" vertical-scroll-proportion="1.0232018">
+            <state line="129" column="19" selection-start="4139" selection-end="4139" vertical-scroll-proportion="1.9536424">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#961#1131#0" expanded="true" />
-                <element signature="e#1120#1121#0" expanded="true" />
-                <element signature="e#1164#1334#0" expanded="true" />
-                <element signature="e#1323#1324#0" expanded="true" />
-                <element signature="e#1608#2709#0" expanded="true" />
-                <element signature="e#2698#2699#0" expanded="true" />
-                <element signature="e#2742#3815#0" expanded="true" />
-                <element signature="e#3422#3624#0" expanded="true" />
-                <element signature="e#3605#3606#0" expanded="true" />
-                <element signature="e#3804#3805#0" expanded="true" />
+                <element signature="e#4558#4776#0" expanded="true" />
+                <element signature="e#4765#4766#0" expanded="true" />
+                <element signature="e#5442#6363#0" expanded="true" />
+                <element signature="e#6352#6353#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -207,8 +175,10 @@
       <file leaf-file-name="Turtle.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Turtle.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="33" selection-start="209" selection-end="233" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="15" column="6" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#103#135#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -228,8 +198,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/org/netdance/napili/language/vanilla/VanillaRunner.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/language/VanillaRunner.groovy" />
-        <option value="$PROJECT_DIR$/src/org/netdance/napili/NapiliFile.groovy" />
-        <option value="$PROJECT_DIR$/src/org/netdance/napili/Napili.java" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/NapiliButtonBar.java" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/samples/Fan.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/samples/Circles.groovy" />
@@ -242,6 +210,8 @@
         <option value="$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/NapiliMenuBar.java" />
+        <option value="$PROJECT_DIR$/src/org/netdance/napili/NapiliFile.groovy" />
+        <option value="$PROJECT_DIR$/src/org/netdance/napili/Napili.java" />
       </list>
     </option>
   </component>
@@ -659,7 +629,11 @@
       <created>1345320705236</created>
       <updated>1345320705236</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="workspace">
+      <created>1345320720131</created>
+      <updated>1345320720131</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -725,7 +699,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modify help layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -740,6 +714,7 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Modify help layout" />
+    <MESSAGE value="workspace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -797,23 +772,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/NapiliButtonBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/NapiliFile.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="6" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Turtle.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="33" selection-start="209" selection-end="233" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="0" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0">
@@ -828,13 +786,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Napili.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="13" selection-start="997" selection-end="997" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-8.684211">
@@ -844,7 +795,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/NapiliMenuBar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="28" selection-start="2924" selection-end="2924" vertical-scroll-proportion="1.0232018">
+        <state line="85" column="28" selection-start="2924" selection-end="2924" vertical-scroll-proportion="0.6621622">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#961#1131#0" expanded="true" />
@@ -857,6 +808,39 @@
             <element signature="e#3422#3624#0" expanded="true" />
             <element signature="e#3605#3606#0" expanded="true" />
             <element signature="e#3804#3805#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/NapiliButtonBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/NapiliFile.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="44" selection-start="333" selection-end="333" vertical-scroll-proportion="0.3153153">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Turtle.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="6" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#103#135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Napili.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="19" selection-start="4139" selection-end="4139" vertical-scroll-proportion="1.9536424">
+          <folding>
+            <element signature="e#4558#4776#0" expanded="true" />
+            <element signature="e#4765#4766#0" expanded="true" />
+            <element signature="e#5442#6363#0" expanded="true" />
+            <element signature="e#6352#6353#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -4,8 +4,6 @@
 
 package org.netdance.napili;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import javafx.animation.Animation;
 import javafx.animation.SequentialTransition;
 import javafx.application.Application;
@@ -29,6 +27,13 @@ import javafx.stage.Stage;
 import org.codehaus.groovy.runtime.InvokerHelper;
 import org.netdance.napili.samples.Circles;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
+/**
+ * Main class for the Application, responsible for setting up and running the JavaFX content.
+ * Also provides methods to modify that displayed content.
+ */
 public class Napili extends Application {
 
     // Width of drawing area
@@ -61,9 +66,9 @@ public class Napili extends Application {
     private static SequentialTransition play = new SequentialTransition();
     private final static Tab outputTab = new Tab("Output");
     private final static TextArea output = new TextArea();
-    public StringWriter sw = new StringWriter();
-    public PrintWriter out = new PrintWriter(sw);
-    private static String initialProgram = (String)Circles.PROGRAM;
+    private StringWriter sw = new StringWriter();
+    private PrintWriter out = new PrintWriter(sw);
+    private static String initialProgram = (String) Circles.PROGRAM;
 
     private final TextArea code = new TextArea();
     private Stage primaryStage;
@@ -111,7 +116,7 @@ public class Napili extends Application {
         play.getChildren().add(animation);
     }
 
-    public void println(String str)  {
+    public void println(String str) {
         out.println(str);
         System.out.println(str);
     }
@@ -171,7 +176,7 @@ public class Napili extends Application {
                 // run user supplied script, adding animations into the sequence queue
                 try {
                     Class clazz = Class.forName(runClass);
-                    InvokerHelper.getMetaClass(clazz).invokeStaticMethod(clazz, "run", new Object[] {Napili.this});
+                    InvokerHelper.getMetaClass(clazz).invokeStaticMethod(clazz, "run", new Object[]{Napili.this});
                 } catch (Exception ex) {
                     println(ex.getMessage());
                     return;
