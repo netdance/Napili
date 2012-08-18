@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c08959c9-6b46-4507-a681-3cb1f28aff46" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/jidrisc.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/jidrisc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/netdance/napili/Napili.java" afterPath="$PROJECT_DIR$/src/org/netdance/napili/Napili.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/netdance/napili/NapiliFile.groovy" afterPath="$PROJECT_DIR$/src/org/netdance/napili/NapiliFile.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy" afterPath="$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy" afterPath="$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy" />
     </list>
     <ignored path="Napili.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -120,19 +121,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AboutText.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy">
+      <file leaf-file-name="HelpText.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0">
+            <state line="9" column="0" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelpText.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy">
+      <file leaf-file-name="AboutText.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0">
+            <state line="9" column="0" selection-start="167" selection-end="167" vertical-scroll-proportion="0.29801324">
               <folding />
             </state>
           </provider>
@@ -158,14 +159,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Napili.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Napili.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Napili.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="19" selection-start="4139" selection-end="4139" vertical-scroll-proportion="1.9536424">
+            <state line="130" column="0" selection-start="4140" selection-end="4140" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#4558#4776#0" expanded="true" />
-                <element signature="e#4765#4766#0" expanded="true" />
-                <element signature="e#5442#6363#0" expanded="true" />
+                <element signature="e#4559#4777#0" expanded="true" />
+                <element signature="e#4766#4767#0" expanded="true" />
+                <element signature="e#5443#6363#0" expanded="true" />
                 <element signature="e#6352#6353#0" expanded="true" />
               </folding>
             </state>
@@ -207,11 +208,11 @@
         <option value="$PROJECT_DIR$/src/org/netdance/napili/Turtle.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/language/TurtleDelegateBaseScript.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/language/BasicRunner.groovy" />
-        <option value="$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy" />
-        <option value="$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/NapiliMenuBar.java" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/NapiliFile.groovy" />
         <option value="$PROJECT_DIR$/src/org/netdance/napili/Napili.java" />
+        <option value="$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy" />
+        <option value="$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy" />
       </list>
     </option>
   </component>
@@ -633,7 +634,11 @@
       <created>1345320720131</created>
       <updated>1345320720131</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Javadoc updates">
+      <created>1345321042474</created>
+      <updated>1345321042474</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -699,7 +704,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="Javadoc updates" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -715,6 +720,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Modify help layout" />
     <MESSAGE value="workspace" />
+    <MESSAGE value="Javadoc updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -724,11 +730,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/samples/Fan.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/samples/Circles.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="0" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0" />
@@ -766,20 +767,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/language/TurtleDelegateBaseScript.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="0" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0">
           <folding />
@@ -833,15 +820,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/dictionaries/jidrisc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/Napili.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="19" selection-start="4139" selection-end="4139" vertical-scroll-proportion="1.9536424">
+        <state line="130" column="0" selection-start="4140" selection-end="4140" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#4558#4776#0" expanded="true" />
-            <element signature="e#4765#4766#0" expanded="true" />
-            <element signature="e#5442#6363#0" expanded="true" />
+            <element signature="e#4559#4777#0" expanded="true" />
+            <element signature="e#4766#4767#0" expanded="true" />
+            <element signature="e#5443#6363#0" expanded="true" />
             <element signature="e#6352#6353#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/HelpText.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/netdance/napili/resources/AboutText.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="167" selection-end="167" vertical-scroll-proportion="0.29801324">
+          <folding />
         </state>
       </provider>
     </entry>
