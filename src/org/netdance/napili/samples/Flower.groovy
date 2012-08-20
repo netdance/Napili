@@ -6,9 +6,9 @@ package org.netdance.napili.samples
 
 class Flower {
 
-        public static NAME = 'Flower'
-        public static PROGRAM =
-"""
+    public static NAME = 'Flower'
+    public static PROGRAM =
+        """
 // Flower
 
 def size = 100
@@ -50,7 +50,7 @@ right 45
 forward size * 3
 
 // draw flower
-def density = 4
+def density = 6
 for (i in 0..(360/density)) {
     newColor()
     forward size back size right density
