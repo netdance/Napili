@@ -25,6 +25,7 @@ class Turtle {
     private double speed = Napili.TURTLESPEED
     private Polygon turtleShape = new Polygon(-Napili.TURTLEWIDTH / 2, 0, 0, -Napili.TURTLEHEIGHT, Napili.TURTLEWIDTH / 2, 0);
     private Napili napili;
+    def Object
 
     Turtle(Napili napili) {
         this.napili = napili;
@@ -41,7 +42,7 @@ class Turtle {
 
         // treat all no-arg methods as properties
         if (this.metaClass.respondsTo(this, name)) {
-            return this."$name"()
+            return this.metaClass.invokeMethod(this, name)
         }
 
         throw new MissingPropertyException("No property on Turtle named '$name'")
@@ -81,10 +82,10 @@ class Turtle {
         Rotate rot = new Rotate(0, 0, 0);
         turtleShape.transforms.add(rot)
 
-        KeyFrame rotkf = new KeyFrame(Duration.millis(1), new KeyValue(rot.angleProperty(), degreeHomeCorrection));
+        KeyFrame rotkf = new KeyFrame(Duration.millis(10), new KeyValue(rot.angleProperty(), degreeHomeCorrection));
 
-        KeyFrame turtleX = new KeyFrame(Duration.millis(1), new KeyValue(turtleShape.translateXProperty(), location.x));
-        KeyFrame turtleY = new KeyFrame(Duration.millis(1), new KeyValue(turtleShape.translateYProperty(), location.y));
+        KeyFrame turtleX = new KeyFrame(Duration.millis(10), new KeyValue(turtleShape.translateXProperty(), location.x));
+        KeyFrame turtleY = new KeyFrame(Duration.millis(10), new KeyValue(turtleShape.translateYProperty(), location.y));
 
         timeline.getKeyFrames().addAll(turtleX, turtleY, rotkf);
 
@@ -94,14 +95,14 @@ class Turtle {
 
     def hide() {
         Timeline timeline = new Timeline()
-        KeyFrame kf = new KeyFrame(Duration.millis(1), new KeyValue(turtleShape.fillProperty(), Color.TRANSPARENT));
+        KeyFrame kf = new KeyFrame(Duration.millis(10), new KeyValue(turtleShape.fillProperty(), Color.TRANSPARENT));
         timeline.getKeyFrames().add(kf)
         napili.addAnimation(timeline)
     }
 
     def show() {
         Timeline timeline = new Timeline()
-        KeyFrame kf = new KeyFrame(Duration.millis(1), new KeyValue(turtleShape.fillProperty(), Color.BLACK));
+        KeyFrame kf = new KeyFrame(Duration.millis(10), new KeyValue(turtleShape.fillProperty(), Color.BLACK));
         timeline.getKeyFrames().add(kf)
         napili.addAnimation(timeline)
     }
@@ -180,6 +181,19 @@ class Turtle {
         def double y;
 
         Location(double x, double y) {
+            final double TOLERANCE = 0.0001
+            if (x < -TOLERANCE) {
+                throw new IllegalArgumentException("Attempted to create a location of ($x,$y). X value cannot be less than 0")
+            }
+            if (y < -TOLERANCE) {
+                throw new IllegalArgumentException("Attempted to create a location of ($x,$y). Y value cannot be less than 0")
+            }
+            if (x > Napili.DRAWX + TOLERANCE) {
+                throw new IllegalArgumentException("Attempted to create a location of ($x,$y). X value cannot be greater than $Napili.DRAWX")
+            }
+            if (y > Napili.DRAWY + TOLERANCE) {
+                throw new IllegalArgumentException("Attempted to create a location of ($x,$y). Y value cannot be greater than $Napili.DRAWY")
+            }
             this.x = x;
             this.y = y;
         }
