@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+
+
 package org.netdance.napili.language
 
 import org.codehaus.groovy.control.CompilerConfiguration
@@ -64,7 +66,7 @@ class BasicRunner {
 
             // treat all no-arg methods on Turtle as binding variables with side effects
             if (turtle.metaClass.respondsTo(turtle, name)) {
-                return turtle."$name"()
+                return turtle.metaClass.invokeMethod(this, name, null)
             }
             return super.getVariable(name);
         }
