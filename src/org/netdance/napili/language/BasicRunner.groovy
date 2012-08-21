@@ -62,10 +62,10 @@ class BasicRunner {
             }
 
             // treat all no-arg methods on Turtle as binding variables with side effects
-            if (turtle.metaClass.respondsTo(turtle, name)) {
-                return turtle.metaClass.invokeMethod(this, name, null)
+            if (turtle.metaClass.respondsTo(turtle,name)) {
+                return turtle.metaClass.invokeMethod(turtle, name)
             }
-            return super.getVariable(name);
+            return super.getVariable(name)
         }
 
         public void setVariable(String name, Object value) {

@@ -32,8 +32,7 @@ class Turtle {
     // Current direction of turtle, in radians
     private double heading = Math.toRadians(Napili.HOMEHEADING)
 
-    private boolean penup = false;
-    private Color penColor = Color.BLACK
+    private PenStatus penStatus = new PenStatus()
     private double speed = Napili.TURTLESPEED
     private Polygon turtleShape = new Polygon(-Napili.TURTLEWIDTH / 2, 0, 0, -Napili.TURTLEHEIGHT, Napili.TURTLEWIDTH / 2, 0);
     private Napili napili;
@@ -125,17 +124,17 @@ class Turtle {
     }
 
     def pendown() {
-        penup = false
+        penStatus.penup = false
         return this
     }
 
     def penup() {
-        penup = true
+        penStatus.penup = true
         return this
     }
 
     def pencolor(Color color) {
-        penColor = color
+        penStatus.color = color
         return this
     }
 
@@ -154,10 +153,10 @@ class Turtle {
         Timeline timeline = new Timeline();
         line.setStroke(Color.TRANSPARENT);
         Color color;
-        if (penup) {
+        if (penStatus.penup) {
             color = Color.TRANSPARENT;
         } else {
-            color = penColor;
+            color = penStatus.color;
         }
         double millis = speed * Math.abs(distance);
         if (millis < 1) millis = 1
@@ -218,6 +217,31 @@ class Turtle {
             double deltaY = sine * distance;
             return new Location(x + deltaX, y + deltaY);
         }
+    }
+
+    private class PenStatus {
+
+
+        private Color color = Color.BLACK
+        boolean penup = false
+
+        Color getColor() {
+            return color
+        }
+
+        void setColor(Color color) {
+            this.color = color
+        }
+
+        boolean getPenup() {
+            return penup
+        }
+
+        void setPenup(boolean penup) {
+            this.penup = penup
+        }
+
+
     }
 }
 
