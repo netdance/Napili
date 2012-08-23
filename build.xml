@@ -15,33 +15,34 @@
   ~ limitations under the License.
   -->
 
-<project name="Napili" default="default" basedir="." 
+<project name="Napili" default="default" basedir="."
          xmlns:fx="javafx:com.sun.javafx.tools.ant">
     <description>Builds, tests, and runs the project Napili.</description>
     <import file="nbproject/build-impl.xml"/>
-    
-     <target name="dist-native" depends="jar" 
-             description="Builds native distributions via JavaFX">
-       <!-- <taskdef resource="com/sun/javafx/tools/ant/antlib.xml"      
-                uri="javafx:com.sun.javafx.tools.ant"
-                classpath=".:path/to/sdk/lib/ant-javafx.jar"/>  -->
-        <fx:deploy width="${javafx.run.width}" height="${javafx.run.height}" 
-                  nativeBundles="all"
-                  outdir="${basedir}/${dist.dir}" outfile="${application.title}">
-          <fx:application name="${application.title}" 
-                          mainClass="${javafx.main.class}"/>
-          <fx:resources>
-              <fx:fileset dir="${basedir}/${dist.dir}"
-                          includes="*.jar"/>
-          </fx:resources>
-          <fx:info title="${application.title}" 
-                   vendor="${application.vendor}"/>
-        </fx:deploy>   
+
+    <target name="dist-native" depends="jar"
+            description="Builds native distributions via JavaFX">
+        <taskdef resource="com/sun/javafx/tools/ant/antlib.xml"
+                 uri="javafx:com.sun.javafx.tools.ant"
+                 classpath="/Library/Java/JavaVirtualMachines/jdk1.7.0_06.jdk/Contents/Home/lib/ant-javafx.jar"/>
+        <fx:deploy width="${javafx.run.width}" height="${javafx.run.height}"
+                   nativeBundles="all"
+                   outdir="${basedir}/${dist.dir}" outfile="${application.title}">
+            <fx:application name="${application.title}"
+                            mainClass="${javafx.main.class}"/>
+            <fx:resources>
+                <fx:fileset dir="${basedir}/${dist.dir}"
+                            includes="*.jar"/>
+            </fx:resources>
+            <fx:info title="${application.title}"
+                     vendor="${application.vendor}"/>
+        </fx:deploy>
     </target>
-     
+
     <target name="-post-clean">
+        <delete dir="build"/>
         <delete dir="dist"/>
         <delete dir="out"/>
     </target>
-    
+
 </project>

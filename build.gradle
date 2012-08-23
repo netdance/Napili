@@ -1,2 +1,4 @@
 ant.importBuild 'build.xml'
 
+for (i in ant.properties)
+    println i
