@@ -6,10 +6,7 @@ defaultTasks 'clean', 'run'
 version = appVersion
 distsDirName = '../dist'
 
-
 buildscript {
-
-    //buildDir = 'build'
 
     final javafxHome = System.env['JAVAFX_HOME']
     if (javafxHome) {
@@ -41,7 +38,6 @@ buildscript {
     of JavaFX version ${requiredJavaFxVersion}."""
       System.exit 1
     }
-
 }
 
 repositories {
@@ -69,7 +65,6 @@ clean.doFirst {
     delete 'out'
     delete  distsDir
 }
-
 
 /*
 task run(type: JavaExec, dependsOn: 'jar') {
@@ -110,7 +105,6 @@ task dist(dependsOn: ['classes','libcopy']) << {
         fileset(dir: "${distsDir}/libs", includes: "*.jar")
     }
 
-
     javafxAnt.deploy(width: appWidth, height: appHeight, nativeBundles: 'all', outdir: distsDir, outfile: appTitle){
         javafxAnt.application(name: appTitle, mainClass: appMainClass)
         javafxAnt.resources {
@@ -118,7 +112,6 @@ task dist(dependsOn: ['classes','libcopy']) << {
         }
         javafxAnt.info(title: appTitle, vendor: appVendor)
     }
-
 }
 
 idea {
@@ -140,6 +133,26 @@ idea {
                 gradleSettings.appendNode('option', [name: 'linkedProjectPath', value: '$PROJECT_DIR$/build.gradle'])
             }
         }
+   }
+   workspace {
+        iws {
+            withXml { provider ->
+                final node = provider.asNode()
+                final component = provider.asNode().component
+                def runMgr = node.component.find { it.'@name' == 'RunManager' }
+                def runConfig = runMgr.appendNode('configuration', [default: 'false', name: 'Run',
+                        type: 'GroovyScriptRunConfiguration', factoryName: 'Groovy' ] )
+                runConfig.appendNode('module', [name: "Napili"])
+                runConfig.appendNode('setting', [name: "path", value: '$PROJECT_DIR$/build.gradle'])
+                runConfig.appendNode('setting', [name: "vmparams", value: ''])
+                runConfig.appendNode('setting', [name: "params", value: 'run'])
+                runConfig.appendNode('setting', [name: "workDir", value: '$PROJECT_DIR$'])
+                runConfig.appendNode('setting', [name: "debug", value: 'false'])
+                runConfig.appendNode('RunnerSettings', [RunnerId: 'Run'])
+                runConfig.appendNode('ConfigurationWrapper', [RunnerId: 'Run'])
+                def method = runConfig.appendNode('method')
+                method.appendNode('option', [name: 'Make', enabled: 'false'])
+            }
+        }
     }
 }
-

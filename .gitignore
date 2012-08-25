@@ -3,6 +3,6 @@
 /build/
 /dist/
 /.gradle/
-Napili.iml
-Napili.ipr
-Napili.iws
+/Napili.iml
+/Napili.ipr
+/Napili.iws

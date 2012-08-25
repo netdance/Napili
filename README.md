@@ -39,8 +39,9 @@ speed - the speed that the turtle draws.  Takes one numeric argument,
     higher is faster
 
 
-Napili's code comes with IntelliJ IDEA and Netbeans setups, as well as the gradle setup that I use.  In IDEA, configure
-the gradle file to build.  In Netbeans, you may need to tweak the libraries... or not.
+Napili's code comes with IntelliJ IDEA and Netbeans setups, as well as the gradle setup that I use.  In IDEA, 
+just use 'gradlew idea' to create the IDEA setup, then after opening, use the default configuration to build.  
+In Netbeans, you may need to tweak the libraries...
 
 I created Napili as a way to learn JavaFX (as well as a number of other technologies), and to better explain Groovy
 DSLs on my blog (which can be found at http://jamesgdriscoll.wordpress.com )
