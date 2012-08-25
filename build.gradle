@@ -2,9 +2,13 @@ apply plugin: 'groovy'
 
 defaultTasks 'clean', 'run'
 
+version = appVersion
+distsDirName = '../dist'
+
+
 buildscript {
 
-    buildDir = 'build'
+    //buildDir = 'build'
 
     final javafxHome = System.env['JAVAFX_HOME']
     if (javafxHome) {
@@ -37,15 +41,6 @@ buildscript {
       System.exit 1
     }
 
-    ant.properties['javafxAntJar'] = ext.javafxAntJar
-    ant.properties['buildDir'] = buildDir
-    ant.properties['app.width'] = appWidth
-    ant.properties['app.height'] = appHeight
-    ant.properties['app.title'] = appTitle
-    ant.properties['app.main.class'] = appMainClass
-    ant.properties['app.vendor'] = appVendor
-    ant.properties['app.version'] = appVersion
-
 }
 
 repositories {
@@ -71,7 +66,7 @@ task wrap(type: Wrapper, description: "create a gradlew") {
 
 clean.doFirst {
     delete 'out'
-    delete  'dist'
+    delete  distsDir
 }
 
 
@@ -83,17 +78,17 @@ task run(type: JavaExec, dependsOn: 'jar') {
 }
 */
 
-task run(type: JavaExec, dependsOn: 'dist') {
+task run(type: JavaExec, dependsOn: 'dist', description: 'Run the application, after building the jar') {
     main = '-jar'
-    args = ['dist/Napili.jar']
+    args = ["${distsDir}/Napili.jar"]
 }
 
 task libcopy(type: Sync) {
     from configurations.runtime
-    into "dist/libs"
+    into "${distsDir}/libs"
 }
 
-task bundleFX(dependsOn: ['classes','libcopy']) << {
+task dist(dependsOn: ['classes','libcopy']) << {
 
     ant.taskdef(resource: "com/sun/javafx/tools/ant/antlib.xml",
                 uri: "javafx:com.sun.javafx.tools.ant",
@@ -102,29 +97,20 @@ task bundleFX(dependsOn: ['classes','libcopy']) << {
     def javafxAnt = groovy.xml.NamespaceBuilder.newInstance(ant, 'javafx:com.sun.javafx.tools.ant')
 
     javafxAnt.resources(id: 'libRes')   {
-        javafxAnt.fileset(dir: 'dist', includes: 'libs/*.jar', type: 'jar', requiredFor: 'startup')
+        javafxAnt.fileset(dir: distsDir, includes: 'libs/*.jar', type: 'jar', requiredFor: 'startup')
     }
 
     javafxAnt.application(id: "NapiliApp", name: "Napili Turtle Graphics", mainClass: appMainClass)
 
-    /*
-    TODO: want to include this into the javafx jar
-    def jarManifest = ant.manifest {
-        attribute(name: 'Implementation-Vendor', value: appVendor)
-        attribute(name: 'Implementation-Title', value: appTitle)
-        attribute(name: 'Implementation-Version', value: appVersion)
-    }
-    */
-
-    javafxAnt.jar(destfile: 'dist/Napili.jar') {
+    javafxAnt.jar(destfile: "${distsDir}/Napili.jar") {
         javafxAnt.application(refid: 'NapiliApp')
         javafxAnt.resources(refid: 'libRes')
-        // jarManifest
         fileset(dir: "${buildDir}/classes/main")
-        fileset(dir: "dist/libs", includes: "*.jar")
+        fileset(dir: "${distsDir}/libs", includes: "*.jar")
     }
 
-    javafxAnt.deploy(width: appWidth, height: appHeight, nativeBundles: 'all', outdir: 'dist', outfile: appTitle){
+
+    javafxAnt.deploy(width: appWidth, height: appHeight, nativeBundles: 'all', outdir: distsDir, outfile: appTitle){
         javafxAnt.application(name: appTitle, mainClass: appMainClass)
         javafxAnt.resources {
             fileset(dir: buildDir, includes: '*.jar')
@@ -134,4 +120,3 @@ task bundleFX(dependsOn: ['classes','libcopy']) << {
 
 }
 
-task dist(dependsOn: 'bundleFX') {}
