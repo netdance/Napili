@@ -2,10 +2,16 @@ apply plugin: 'groovy'
 
 //ant.importBuild 'build.xml'
 
+
+
 buildscript {
+
+    buildDir = 'build'
+
     final javafxHome = System.env['JAVAFX_HOME']
     if (javafxHome) {
       ext.javafxJar = "${javafxHome}/rt/lib/jfxrt.jar"
+      ext.javafxAntJar = "${javafxHome}/lib/ant-javafx.jar"
     } else {
       def javaHome = System.env['JAVA_HOME']
       if (!javaHome) {
@@ -15,12 +21,15 @@ buildscript {
         final javafxJar = "${javaHome}/jre/lib/jfxrt.jar"
         if ((new File(javafxJar)).exists())
             ext.javafxJar = javafxJar
+            ext.javafxAntJar = "${javaHome}/lib/ant-javafx.jar"
       } 
     }
     try {
       println "JavaFX runtime jar: ${ext.javafxJar}"
+      println "JavaFX antlib jar: ${ext.javafxAntJar}"
       dependencies {
         classpath files(ext.javafxJar)
+        classpath files(ext.javafxAntJar)
       }
     }
     catch (MissingPropertyException mpe) {
@@ -29,6 +38,18 @@ buildscript {
     of JavaFX version ${requiredJavaFxVersion}."""
       System.exit 1
     }
+
+    ant.properties['javafxAntJar'] = ext.javafxAntJar
+    ant.properties['buildDir'] = buildDir
+    ant.properties['app.width'] = appWidth
+    ant.properties['app.height'] = appHeight
+    ant.properties['app.title'] = appTitle
+    ant.properties['app.main.class'] = appMainClass
+    ant.properties['app.vendor'] = appVendor
+    ant.properties['app.version'] = appVersion
+
+    //apply from: 'gradle.properties', to: ant.properties
+
 }
 
 repositories {
@@ -48,24 +69,50 @@ sourceSets {
     }
 }
 
+ant.properties['build.classes.dir'] = sourceSets.main.output.asPath
+
+
 task wrap(type: Wrapper, description: "create a gradlew") {
     gradleVersion = '1.1'
 }
 
 clean.doFirst {
     delete 'out'
-    delete 'dist'
+    delete  'dist'
 }
 
 
+/*
 task run(type: JavaExec, dependsOn: 'jar') {
     description = "Run the Napili Program"
     main = 'org.netdance.napili.Napili'
     classpath = sourceSets.main.output + sourceSets.main.compileClasspath
 }
+*/
 
+task run(type: JavaExec, dependsOn: 'dist') {
+    main = '-jar'
+    args = ['dist/Napili.jar']
+}
 
-task bundleFX(dependsOn: 'jar') {
+task libcopy(type: Sync) {
+    from configurations.runtime
+    into "dist/libs"
+}
+
+task bundleFX(dependsOn: '_dist-native') {
     // TODO: need to put fx tasks here for proper bundling
     //ant.taskdef(resource: '', uri: '', classpath: '')
+   /* <taskdef resource="com/sun/javafx/tools/ant/antlib.xml"
+    uri="javafx:com.sun.javafx.tools.ant"
+    classpath=".:path/to/sdk/lib/ant-javafx.jar"/>    */
+    //ant.taskdef(resource: "com/sun/javafx/tools/ant/antlib.xml",
+    //            uri: "javafx:com.sun.javafx.tools.ant",
+    //            classpath: ".:${project.ext.javafxAntJar}" )
+
+    ant.importBuild 'fx-extras.xml'
+
 }
+
+
+task dist(dependsOn: 'bundleFX') {}
