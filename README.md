@@ -4,6 +4,11 @@ Napili - Turtle Graphics with Groovy
 Napili is a simple Turtle Graphics Program with Groovy as the user facing programming language.   Users can control
 the turtle using a small set of commands, along with all the libraries that Java and Groovy have to offer.
 
+
+To build and run Napili, type:
+gradlew
+
+
 From the Napili Help:
 
 
@@ -33,15 +38,7 @@ speed - the speed that the turtle draws.  Takes one numeric argument,
 
 
 
-To build Napili, type:
-gradlew build
-
-To run Napili, type:
-gradlew run
-
 Napili's code comes with IntelliJ IDEA and Netbeans setups, and shold run with a Gradle setup as well.
-
-
 
 I created Napili as a way to learn JavaFX (as well as a number of other technologies), and to better explain Groovy
 DSLs on my blog (which can be found at http://jamesgdriscoll.wordpress.com )
