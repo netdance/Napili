@@ -1,8 +1,6 @@
 apply plugin: 'groovy'
 
-//ant.importBuild 'build.xml'
-
-
+defaultTasks 'clean', 'run'
 
 buildscript {
 
@@ -48,8 +46,6 @@ buildscript {
     ant.properties['app.vendor'] = appVendor
     ant.properties['app.version'] = appVersion
 
-    //apply from: 'gradle.properties', to: ant.properties
-
 }
 
 repositories {
@@ -68,9 +64,6 @@ sourceSets {
         }
     }
 }
-
-ant.properties['build.classes.dir'] = sourceSets.main.output.asPath
-
 
 task wrap(type: Wrapper, description: "create a gradlew") {
     gradleVersion = '1.1'
@@ -106,13 +99,22 @@ task bundleFX(dependsOn: '_dist-native') {
    /* <taskdef resource="com/sun/javafx/tools/ant/antlib.xml"
     uri="javafx:com.sun.javafx.tools.ant"
     classpath=".:path/to/sdk/lib/ant-javafx.jar"/>    */
-    //ant.taskdef(resource: "com/sun/javafx/tools/ant/antlib.xml",
-    //            uri: "javafx:com.sun.javafx.tools.ant",
-    //            classpath: ".:${project.ext.javafxAntJar}" )
-
+    ant.taskdef(resource: "com/sun/javafx/tools/ant/antlib.xml",
+                uri: "javafx:com.sun.javafx.tools.ant",
+                classpath: ".:${project.ext.javafxAntJar}" )
+    // javafx:com.sun.javafx.tools.ant:resources
     ant.importBuild 'fx-extras.xml'
 
-}
+    def javafxAnt = groovy.xml.NamespaceBuilder.newInstance(ant, 'javafx:com.sun.javafx.tools.ant')
 
+    def libRes = javafxAnt.resources(id: 'libRes')   {
+        javafxAnt.fileset(dir: 'dist', includes: 'libs/*.jar', type: 'jar', requiredFor: 'startup')
+    }
+
+    def app = javafxAnt.application(id: "NapiliApp", name: "Napili Turtle Graphics", mainClass: appMainClass)
+
+
+
+}
 
 task dist(dependsOn: 'bundleFX') {}

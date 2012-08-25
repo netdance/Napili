@@ -27,18 +27,19 @@
 
     <target name="_dist-native" depends="classes, libcopy"
             description="Builds native distributions via JavaFX">
-        <taskdef resource="com/sun/javafx/tools/ant/antlib.xml"
+        <!-- <taskdef resource="com/sun/javafx/tools/ant/antlib.xml"
                  uri="javafx:com.sun.javafx.tools.ant"
-                 classpath="${javafxAntJar}"/>
-
+                 classpath="${javafxAntJar}"/>  -->
+        <!--
         <fx:application id="NapiliApp"
                         name="Napili Turtle Graphics"
                         mainClass="${app.main.class}" />
-
+         -->
+        <!--
         <fx:resources id="libRes">
             <fx:fileset dir="dist" includes="libs/*.jar" type="jar" requiredFor="startup"/>
         </fx:resources>
-
+        -->
 
         <fx:jar destfile="dist/Napili.jar">
             <!-- Define what to launch -->
