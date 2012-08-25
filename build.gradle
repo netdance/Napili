@@ -93,27 +93,44 @@ task libcopy(type: Sync) {
     into "dist/libs"
 }
 
-task bundleFX(dependsOn: '_dist-native') {
-    // TODO: need to put fx tasks here for proper bundling
-    //ant.taskdef(resource: '', uri: '', classpath: '')
-   /* <taskdef resource="com/sun/javafx/tools/ant/antlib.xml"
-    uri="javafx:com.sun.javafx.tools.ant"
-    classpath=".:path/to/sdk/lib/ant-javafx.jar"/>    */
+task bundleFX(dependsOn: ['classes','libcopy']) << {
+
     ant.taskdef(resource: "com/sun/javafx/tools/ant/antlib.xml",
                 uri: "javafx:com.sun.javafx.tools.ant",
                 classpath: ".:${project.ext.javafxAntJar}" )
-    // javafx:com.sun.javafx.tools.ant:resources
-    ant.importBuild 'fx-extras.xml'
 
     def javafxAnt = groovy.xml.NamespaceBuilder.newInstance(ant, 'javafx:com.sun.javafx.tools.ant')
 
-    def libRes = javafxAnt.resources(id: 'libRes')   {
+    javafxAnt.resources(id: 'libRes')   {
         javafxAnt.fileset(dir: 'dist', includes: 'libs/*.jar', type: 'jar', requiredFor: 'startup')
     }
 
-    def app = javafxAnt.application(id: "NapiliApp", name: "Napili Turtle Graphics", mainClass: appMainClass)
+    javafxAnt.application(id: "NapiliApp", name: "Napili Turtle Graphics", mainClass: appMainClass)
 
+    /*
+    TODO: want to include this into the javafx jar
+    def jarManifest = ant.manifest {
+        attribute(name: 'Implementation-Vendor', value: appVendor)
+        attribute(name: 'Implementation-Title', value: appTitle)
+        attribute(name: 'Implementation-Version', value: appVersion)
+    }
+    */
 
+    javafxAnt.jar(destfile: 'dist/Napili.jar') {
+        javafxAnt.application(refid: 'NapiliApp')
+        javafxAnt.resources(refid: 'libRes')
+        // jarManifest
+        fileset(dir: "${buildDir}/classes/main")
+        fileset(dir: "dist/libs", includes: "*.jar")
+    }
+
+    javafxAnt.deploy(width: appWidth, height: appHeight, nativeBundles: 'all', outdir: 'dist', outfile: appTitle){
+        javafxAnt.application(name: appTitle, mainClass: appMainClass)
+        javafxAnt.resources {
+            fileset(dir: buildDir, includes: '*.jar')
+        }
+        javafxAnt.info(title: appTitle, vendor: appVendor)
+    }
 
 }
 
