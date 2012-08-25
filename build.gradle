@@ -1,4 +1,71 @@
-ant.importBuild 'build.xml'
+apply plugin: 'groovy'
 
-for (i in ant.properties)
-    println i
+//ant.importBuild 'build.xml'
+
+buildscript {
+    final javafxHome = System.env['JAVAFX_HOME']
+    if (javafxHome) {
+      ext.javafxJar = "${javafxHome}/rt/lib/jfxrt.jar"
+    } else {
+      def javaHome = System.env['JAVA_HOME']
+      if (!javaHome) {
+          javaHome = System.properties['java.home'].replaceFirst(/\/jre$/,'')
+      }
+      if (javaHome) {
+        final javafxJar = "${javaHome}/jre/lib/jfxrt.jar"
+        if ((new File(javafxJar)).exists())
+            ext.javafxJar = javafxJar
+      } 
+    }
+    try {
+      println "JavaFX runtime jar: ${ext.javafxJar}"
+      dependencies {
+        classpath files(ext.javafxJar)
+      }
+    }
+    catch (MissingPropertyException mpe) {
+      println """    Please set the environment variable JAVAFX_HOME
+    to the directory that contains rt/lib/jfxrt.jar
+    of JavaFX version ${requiredJavaFxVersion}."""
+      System.exit 1
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  groovy "org.codehaus.groovy:groovy-all:${requiredGroovyVersion}"
+  compile files(ext.javafxJar)
+}
+
+sourceSets {
+    main {
+        groovy {
+            srcDir 'src'
+        }
+    }
+}
+
+task wrap(type: Wrapper, description: "create a gradlew") {
+    gradleVersion = '1.1'
+}
+
+clean.doFirst {
+    delete 'out'
+    delete 'dist'
+}
+
+
+task run(type: JavaExec, dependsOn: 'jar') {
+    description = "Run the Napili Program"
+    main = 'org.netdance.napili.Napili'
+    classpath = sourceSets.main.output + sourceSets.main.compileClasspath
+}
+
+
+task bundleFX(dependsOn: 'jar') {
+    // TODO: need to put fx tasks here for proper bundling
+    //ant.taskdef(resource: '', uri: '', classpath: '')
+}

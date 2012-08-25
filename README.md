@@ -33,10 +33,14 @@ speed - the speed that the turtle draws.  Takes one numeric argument,
 
 
 
-To make Napili (insert instructions here - ant from the commandline should work once you've got the libraries set up).
+To build Napili, type:
+gradlew build
 
+To run Napili, type:
+gradlew run
 
-Napili's code comes with IntelliJ IDEA and Netbeans setups.
+Napili's code comes with IntelliJ IDEA and Netbeans setups, and shold run with a Gradle setup as well.
+
 
 
 I created Napili as a way to learn JavaFX (as well as a number of other technologies), and to better explain Groovy
