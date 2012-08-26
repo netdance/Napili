@@ -22,6 +22,8 @@ class Circles {
 
     public static final PROGRAM =
 """
+// Circles
+// create a series of interlocking circles
 
 def circle(size) {
     for (i in 1..45) {

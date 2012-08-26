@@ -37,7 +37,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import javafx.stage.Stage;
 import org.codehaus.groovy.runtime.InvokerHelper;
-import org.netdance.napili.samples.Flower;
+import org.netdance.napili.samples.Circles;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -80,7 +80,7 @@ public class Napili extends Application {
     private final static TextArea output = new TextArea();
     private StringWriter sw = new StringWriter();
     private PrintWriter out = new PrintWriter(sw);
-    private static String initialProgram = (String) Flower.PROGRAM;
+    private static String initialProgram = (String) Circles.PROGRAM;
 
     private final TextArea code = new TextArea();
     private Stage primaryStage;
