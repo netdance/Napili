@@ -48,6 +48,14 @@ public class NapiliButtonBar extends HBox {
             }
         });
 
+        Button clearButton = new Button("Clear");
+        clearButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                napili.setCode("");
+            }
+        });
+
         final ChoiceBox<Object> sampleChoice = new ChoiceBox<>();
         sampleChoice.getItems().addAll("Samples", new Separator());
         sampleChoice.getItems().addAll(SampleList.getSampleListNames());
@@ -67,6 +75,7 @@ public class NapiliButtonBar extends HBox {
 
         getChildren().add(saveButton);
         getChildren().add(loadButton);
+        getChildren().add(clearButton);
         getChildren().add(sampleChoice);
         getChildren().add(napili.getSubmitButton());
     }
