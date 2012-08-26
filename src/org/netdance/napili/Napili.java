@@ -94,10 +94,12 @@ public class Napili extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         BorderPane root = new BorderPane();
+        BorderPane top = new BorderPane();
         Group main = new Group();
-        root.setCenter(main);
+        top.setCenter(main);
+        root.setTop(top);
 
-        root.setBottom(setupTabs());
+        root.setCenter(setupTabs());
         root.getChildren().add(new NapiliMenuBar(this));
         Scene scene = new Scene(root, DRAWX + 10, DRAWY + 250);
         primaryStage.setTitle("Napili");
@@ -204,6 +206,8 @@ public class Napili extends Application {
         codeBox.setAlignment(Pos.BOTTOM_RIGHT);
         code.setWrapText(false);
         code.setText(initialProgram);
+        // set the preferred row count to something ridiculously high
+        code.setPrefRowCount(100);
         codeBox.getChildren().addAll(code, new NapiliButtonBar(this));
         codeTab.setContent(codeBox);
 
@@ -219,6 +223,7 @@ public class Napili extends Application {
         submitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
+
                 // reset output, wipe screen and animation queue
                 resetOutput();
                 // run user supplied script, adding animations into the sequence queue
