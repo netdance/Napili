@@ -19,7 +19,7 @@ package org.netdance.napili.resources
 class HelpText {
 
     public static final def TEXT =
-        """
+"""
 The following commands are supported for using the turtle to draw
 lines on the screen:
 
@@ -48,11 +48,11 @@ speed - the speed that the turtle draws.  Takes one numeric argument,
     higher is faster
 
 All of Groovy's command structures are available by default - if/else,
-    while, for, etc.
+    while, for, etc.  You can also use println to print to the output
+    tab.
 
 All of Groovy and Java's classes are also available by default - Math.PI,
     Random, etc.
 
 """
-
 }

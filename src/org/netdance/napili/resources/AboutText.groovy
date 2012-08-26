@@ -19,10 +19,11 @@ package org.netdance.napili.resources
 class AboutText {
 
     public static final def TEXT =
-        """
+"""
 This program was written using JavaFX 2 and 
 Groovy, and is intended as an example for using both.  
-Please find the code for this program at <url here>.
+Please find the code for this program at
+https://github.com/netdance/Napili
 
 This program was written by Jim Driscoll, 
 in Aug 2012.
