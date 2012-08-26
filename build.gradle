@@ -1,7 +1,7 @@
 apply plugin: 'groovy'
 apply plugin: 'idea'
 
-defaultTasks 'clean', 'run'
+defaultTasks 'clean', 'launch'
 
 version = appVersion
 distsDirName = '../dist'
@@ -28,7 +28,7 @@ buildscript {
             classpath files(ext.javafxJar)
         }
     }
-    catch (MissingPropertyException mpe) {
+    catch (MissingPropertyException ignore) {
         println """
     Please set the environment variable JAVAFX_HOME or
     JAVA_HOME to a directory that contains rt/lib/jfxrt.jar
@@ -65,7 +65,7 @@ def findJavaFXAntJar() {
     try {
         println "JavaFX antlib jar: ${project.ext.javafxAntJar}"
     }
-    catch (MissingPropertyException mpe) {
+    catch (MissingPropertyException ignore) {
         println """
     Please set the environment variable JAVAFX_HOME or
     JAVA_HOME to a directory that contains lib/ant-javafx.jar
@@ -100,13 +100,13 @@ clean.doFirst {
     delete  distsDir
 }
 
-task run(type: JavaExec, dependsOn: 'classes') {
+task launch(type: JavaExec, dependsOn: 'classes') {
     description = "Run the Napili Program"
     main = 'org.netdance.napili.Napili'
     classpath = sourceSets.main.output + sourceSets.main.compileClasspath
 }
 
-task runDist(type: JavaExec, dependsOn: 'dist', description: 'Run the application, after building the jar') {
+task launchDist(type: JavaExec, dependsOn: 'dist', description: 'Run the application, after building the jar') {
     main = '-jar'
     args = ["${distsDir}/Napili.jar"]
 }
@@ -161,7 +161,6 @@ idea {
         ipr {
             withXml { provider ->
                 final node = provider.asNode()
-                final component = provider.asNode().component
                 node.component.find { it.'@name' == 'VcsDirectoryMappings' }.mapping[0].'@vcs' = 'Git'
                 final gradleSettings = node.appendNode('component' , [name: 'GradleSettings'])
                 gradleSettings.appendNode('option', [name: 'linkedProjectPath', value: '$PROJECT_DIR$/build.gradle'])
@@ -172,14 +171,13 @@ idea {
         iws {
             withXml { provider ->
                 final node = provider.asNode()
-                final component = provider.asNode().component
                 def runMgr = node.component.find { it.'@name' == 'RunManager' }
                 def runConfig = runMgr.appendNode('configuration', [default: 'false', name: 'Run',
                         type: 'GroovyScriptRunConfiguration', factoryName: 'Groovy' ] )
                 runConfig.appendNode('module', [name: "Napili"])
                 runConfig.appendNode('setting', [name: "path", value: '$PROJECT_DIR$/build.gradle'])
                 runConfig.appendNode('setting', [name: "vmparams", value: ''])
-                runConfig.appendNode('setting', [name: "params", value: 'run'])
+                runConfig.appendNode('setting', [name: "params", value: 'launch'])
                 runConfig.appendNode('setting', [name: "workDir", value: '$PROJECT_DIR$'])
                 runConfig.appendNode('setting', [name: "debug", value: 'false'])
                 runConfig.appendNode('RunnerSettings', [RunnerId: 'Run'])
