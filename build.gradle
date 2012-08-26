@@ -10,33 +10,67 @@ buildscript {
 
     final javafxHome = System.env['JAVAFX_HOME']
     if (javafxHome) {
-      ext.javafxJar = "${javafxHome}/rt/lib/jfxrt.jar"
-      ext.javafxAntJar = "${javafxHome}/lib/ant-javafx.jar"
+        ext.javafxJar = "${javafxHome}/rt/lib/jfxrt.jar"
     } else {
-      def javaHome = System.env['JAVA_HOME']
-      if (!javaHome) {
-          javaHome = System.properties['java.home'].replaceFirst(/\/jre$/,'')
-      }
-      if (javaHome) {
-        final javafxJar = "${javaHome}/jre/lib/jfxrt.jar"
-        if ((new File(javafxJar)).exists())
-            ext.javafxJar = javafxJar
-            ext.javafxAntJar = "${javaHome}/lib/ant-javafx.jar"
-      } 
+        def javaHome = System.env['JAVA_HOME']
+        if (!javaHome) {
+            javaHome = System.properties['java.home']
+        }
+        if (javaHome) {
+            final javafxJar = "${javaHome}/lib/jfxrt.jar"
+            if ((new File(javafxJar)).exists())
+                ext.javafxJar = javafxJar
+        }
     }
     try {
-      println "JavaFX runtime jar: ${ext.javafxJar}"
-      println "JavaFX antlib jar: ${ext.javafxAntJar}"
-      dependencies {
-        classpath files(ext.javafxJar)
-        classpath files(ext.javafxAntJar)
-      }
+        println "JavaFX runtime jar: ${ext.javafxJar}"
+        dependencies {
+            classpath files(ext.javafxJar)
+        }
     }
     catch (MissingPropertyException mpe) {
-      println """    Please set the environment variable JAVAFX_HOME
-    to the directory that contains rt/lib/jfxrt.jar
+        println """
+    Please set the environment variable JAVAFX_HOME or
+    JAVA_HOME to a directory that contains rt/lib/jfxrt.jar
     of JavaFX version ${requiredJavaFxVersion}."""
-      System.exit 1
+        System.exit 1
+    }
+}
+
+def findJavaFXAntJar() {
+
+    final javafxHome = System.env['JAVAFX_HOME']
+    if (javafxHome) {
+        ext.javafxAntJar = "${javafxHome}/lib/ant-javafx.jar"
+    } else {
+        def javaHome = System.env['JAVA_HOME']
+        if (!javaHome) {
+            javaHome = System.properties['java.home']
+        }
+        if (javaHome) {
+            def javafxAntJar = "${javaHome}/lib/ant-javafx.jar"
+            if ((new File(javafxAntJar)).exists()) {
+                ext.javafxJar = javafxAntJar
+            } else {
+                // we may be in the jre dir, try looking one level up
+                javaHome = (new File(javaHome)).parent
+                javafxAntJar = "${javaHome}/lib/ant-javafx.jar"
+                if ((new File(javafxAntJar)).exists()) {
+                    println 'setting'
+                    project.ext.javafxAntJar = javafxAntJar
+                }
+            }
+        }
+    }
+    try {
+        println "JavaFX antlib jar: ${project.ext.javafxAntJar}"
+    }
+    catch (MissingPropertyException mpe) {
+        println """
+    Please set the environment variable JAVAFX_HOME or
+    JAVA_HOME to a directory that contains lib/ant-javafx.jar
+    of JavaFX version ${requiredJavaFxVersion}."""
+        System.exit 1
     }
 }
 
@@ -66,15 +100,13 @@ clean.doFirst {
     delete  distsDir
 }
 
-/*
-task run(type: JavaExec, dependsOn: 'jar') {
+task run(type: JavaExec, dependsOn: 'classes') {
     description = "Run the Napili Program"
     main = 'org.netdance.napili.Napili'
     classpath = sourceSets.main.output + sourceSets.main.compileClasspath
 }
-*/
 
-task run(type: JavaExec, dependsOn: 'dist', description: 'Run the application, after building the jar') {
+task runDist(type: JavaExec, dependsOn: 'dist', description: 'Run the application, after building the jar') {
     main = '-jar'
     args = ["${distsDir}/Napili.jar"]
 }
@@ -85,6 +117,8 @@ task libcopy(type: Sync) {
 }
 
 task dist(dependsOn: ['classes','libcopy']) << {
+
+    findJavaFXAntJar()
 
     ant.taskdef(resource: "com/sun/javafx/tools/ant/antlib.xml",
                 uri: "javafx:com.sun.javafx.tools.ant",
