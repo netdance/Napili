@@ -35,7 +35,8 @@ To build and run Napili, type:
 * show - show the turtle, if hidden. Otherwise, no change.
 * hide - hide the turtle (it's still there, and will still draw, you
     just can't see it)
-* speed - the speed that the turtle draws.  Takes one numeric argument,
+* speed 
+    the speed that the turtle draws.  Takes one numeric argument,
     higher is faster
 
 ### Miscellaneous
