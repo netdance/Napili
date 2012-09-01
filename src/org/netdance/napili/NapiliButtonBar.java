@@ -61,7 +61,6 @@ public class NapiliButtonBar extends HBox {
         sampleChoice.getItems().addAll(SampleList.getSampleListNames());
         sampleChoice.getSelectionModel().selectFirst();
         sampleChoice.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-
             @Override
             public void changed(ObservableValue<? extends Number> ov, Number oldNum, Number newNum) {
                 if (newNum.intValue() < 2) {
@@ -70,7 +69,6 @@ public class NapiliButtonBar extends HBox {
                 int selectedIndex = newNum.intValue() - 2;
                 napili.setCode(SampleList.getSampleListPrograms().get(selectedIndex));
             }
-
         });
 
         getChildren().add(saveButton);
