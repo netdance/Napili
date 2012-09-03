@@ -26,7 +26,7 @@ class Circles {
 // create a series of interlocking circles
 
 def circle(size) {
-    for (i in 1..45) {
+    45.times {
         forward size
         right 8
     }
@@ -38,14 +38,13 @@ forward 250
 pendown
 pencolor Color.PURPLE
 
-for (i in 1..12) {
+12.times {
     circle 10
     right 30
 }
 
 home
 hide
-
 """
 
 }

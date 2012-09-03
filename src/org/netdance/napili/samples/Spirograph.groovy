@@ -39,7 +39,7 @@ forward 250
 pendown
 
 def square(size) {
-    for (i in 1..4) {
+    4.times {
         forward size
         right 90
     }
