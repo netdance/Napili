@@ -3,6 +3,15 @@
 Napili is a simple Turtle Graphics Program with Groovy as the user facing programming language.   Users can control
 the turtle using a small set of commands, along with all the libraries that Java and Groovy have to offer.
 
+## Goals
+
+I created Napili as a way to learn JavaFX (as well as a number of other technologies), and to better explain Groovy
+DSLs on my blog (which can be found at http://jamesgdriscoll.wordpress.com )
+
+It's not a polished app (especially for someone who doesn't already know Groovy!).  If you like the idea of it, and
+think I should spend time polishing it (up to the level, for instance, of the very good [Kojo](http://www.kogics.net/sf:kojo),
+then let me know.  Any help doing so would also be appreciated.
+
 ## Requirements
 
 This project has only been tested with JDK7u6, which includes JavaFX 2.2.  It should work with other versions of the JDK,
@@ -45,7 +54,5 @@ Napili's code comes with IntelliJ IDEA and Netbeans setups, as well as the gradl
 just use 'gradlew idea' to create the IDEA setup, then after opening, use the default configuration to build.  
 In Netbeans, you may need to tweak the libraries...
 
-I created Napili as a way to learn JavaFX (as well as a number of other technologies), and to better explain Groovy
-DSLs on my blog (which can be found at http://jamesgdriscoll.wordpress.com )
 
 Napili is named after the beautiful bay off the coast of Maui, where I once saw a turtle the size of a Volkswagen.

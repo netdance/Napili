@@ -76,7 +76,7 @@ public class NapiliMenuBar extends MenuBar {
                 aboutPane.setAlignment(Pos.CENTER);
                 Text aboutText = new Text((String) AboutText.TEXT);
                 aboutPane.getChildren().add(aboutText);
-                Button exitButton = new Button("Exit");
+                Button exitButton = new Button("Close");
                 aboutPane.getChildren().add(exitButton);
                 exitButton.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
