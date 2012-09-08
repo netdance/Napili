@@ -20,7 +20,9 @@ class Fan {
     public static final String NAME = 'Fan'
     public static final PROGRAM =
 """
-// Fan
+// Fan Sample Program
+// Draw a blue fan of lines
+// in a semicircle
 
 pencolor Color.DARKBLUE
 penup
@@ -28,12 +30,14 @@ forward 25
 pendown
 left 90
 
+// Make the turtle go really fast
 speed 50
 
 def width = 200
-for (i in 0..180)
+180.times {
   forward width back width right 1
-
+}
+// Hide the turtle at the end of drawing
 hide
 """
 
