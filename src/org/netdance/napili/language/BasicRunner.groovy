@@ -19,6 +19,8 @@ import org.codehaus.groovy.control.CompilerConfiguration
 import org.codehaus.groovy.control.customizers.ImportCustomizer
 import org.netdance.napili.Napili
 import org.netdance.napili.Turtle
+import org.codehaus.groovy.control.customizers.ASTTransformationCustomizer
+import groovy.transform.TimedInterrupt
 
 class BasicRunner {
 
@@ -29,7 +31,8 @@ class BasicRunner {
         config.setScriptBaseClass("org.netdance.napili.language.TurtleDelegateBaseScript")
         ImportCustomizer ic = new ImportCustomizer();
         ic.addImports('javafx.scene.paint.Color')
-        config.addCompilationCustomizers(ic)
+        def ti = new ASTTransformationCustomizer([value: 15L],TimedInterrupt)
+        config.addCompilationCustomizers(ic, ti)
         GroovyShell shell = new GroovyShell(config)
         try {
             Script script = shell.parse(scriptStr)
