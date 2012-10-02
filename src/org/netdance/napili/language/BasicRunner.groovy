@@ -31,7 +31,7 @@ class BasicRunner {
         config.setScriptBaseClass("org.netdance.napili.language.TurtleDelegateBaseScript")
         ImportCustomizer ic = new ImportCustomizer();
         ic.addImports('javafx.scene.paint.Color')
-        def ti = new ASTTransformationCustomizer([value: 15L],TimedInterrupt)
+        def ti = new ASTTransformationCustomizer([value: Napili.TIMEOUT],TimedInterrupt)
         config.addCompilationCustomizers(ic, ti)
         GroovyShell shell = new GroovyShell(config)
         try {

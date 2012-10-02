@@ -68,6 +68,8 @@ public class Napili extends Application {
     // Width of the base of the turtle
     public static final double TURTLEWIDTH = 20;
 
+    public static final long TIMEOUT = 15L;
+
     // The script runner class name used to execute the turtle graphic scripts
     private final String runClass = "org.netdance.napili.language.BasicRunner";
 
