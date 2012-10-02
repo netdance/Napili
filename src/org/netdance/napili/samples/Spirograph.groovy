@@ -31,8 +31,6 @@ def increment = 10
 // the size of the shape
 def size = 100
 
-
-
 speed 3
 penup
 forward 250
