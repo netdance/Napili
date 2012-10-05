@@ -27,6 +27,11 @@ buildscript {
     final javafxHome = System.env['JAVAFX_HOME']
     if (javafxHome) {
         ext.javafxJar = "${javafxHome}/rt/lib/jfxrt.jar"
+        if (!(new File(ext.javafxJar).exists())) {
+            // If JAVAFX_HOME/rt/lib/jfxrt.jar doesn't exist, maybe the user
+            // is pointing at the directory containing jfxrt.jar itself?
+            ext.javafxJar = "${javafxHome}/jfxrt.jar"
+        }
     } else {
         def javaHome = System.env['JAVA_HOME']
         if (!javaHome) {
@@ -56,8 +61,12 @@ buildscript {
 def findJavaFXAntJar() {
 
     final javafxHome = System.env['JAVAFX_HOME']
+
     if (javafxHome) {
         ext.javafxAntJar = "${javafxHome}/lib/ant-javafx.jar"
+        if (!(new File(ext.javafxAntJar).exists())) {
+            ext.javafxJar = "${javafxHome}/ant-javafx.jar"
+        }
     } else {
         String javaHome = System.env['JAVA_HOME']
         if (!javaHome) {
@@ -66,7 +75,7 @@ def findJavaFXAntJar() {
         if (javaHome) {
             def javafxAntJar = "${javaHome}/lib/ant-javafx.jar"
             if ((new File(javafxAntJar)).exists()) {
-                ext.javafxJar = javafxAntJar
+                ext.javafxAntJar = javafxAntJar
             } else {
                 // we may be in the jre dir, try looking one level up
                 javaHome = (new File(javaHome)).parent
