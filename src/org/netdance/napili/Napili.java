@@ -39,9 +39,6 @@ import javafx.stage.Stage;
 import org.codehaus.groovy.runtime.InvokerHelper;
 import org.netdance.napili.samples.Circles;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-
 /**
  * Main class for the Application, responsible for setting up and running the JavaFX content.
  * Also provides methods to modify that displayed content.
@@ -77,9 +74,7 @@ public class Napili extends Application {
     private final Group holdingGroup = new Group();
     private static SequentialTransition play = new SequentialTransition();
     private final static Tab outputTab = new Tab("Output");
-    private final static TextArea output = new TextArea();
-    private StringWriter sw = new StringWriter();
-    private PrintWriter out = new PrintWriter(sw);
+    protected final static TextArea output = new TextArea();
     private static String initialProgram = (String) Circles.PROGRAM;
 
     private final TextArea code = new TextArea();
@@ -140,24 +135,6 @@ public class Napili extends Application {
         play.getChildren().add(animation);
     }
 
-    /**
-     * Print a line to the output area
-     *
-     * @param str String to print
-     */
-    public void println(String str) {
-        out.println(str);
-        System.out.println(str);
-    }
-
-    /**
-     * Get the PrintWriter which will be used to write to the output area
-     *
-     * @return PrintWriter used to write to the output area
-     */
-    public PrintWriter getPrintWriter() {
-        return out;
-    }
 
     /**
      * Set the value of the user code area to a script
@@ -231,12 +208,12 @@ public class Napili extends Application {
                     Class clazz = Class.forName(runClass);
                     InvokerHelper.getMetaClass(clazz).invokeStaticMethod(clazz, "run", new Object[]{Napili.this});
                 } catch (Exception ex) {
-                    println(ex.getMessage());
+                    NapiliOutput.println(ex.getMessage());
                     return;
                 }
                 // play animations in the sequence
                 play.play();
-                flushOutput();
+                NapiliOutput.flushOutput();
                 String outText = output.getText();
                 if (outText != null && outText.length() > 0) {
                     outputTabAlert();
@@ -254,20 +231,15 @@ public class Napili extends Application {
         outputTab.setStyle("-fx-font-weight: normal;");
     }
 
-    private void flushOutput() {
-        out.flush();
-        String outputStr = sw.toString();
-        output.setText(Napili.output.getText() + outputStr);
-    }
+
 
     private void resetOutput() {
         // clear screen
         holdingGroup.getChildren().remove(drawGroup);
         holdingGroup.getChildren().add(drawGroup = new Group());
         // clear output
+        NapiliOutput.resetOutput();
         output.setText("");
-        sw = new StringWriter();
-        out = new PrintWriter(sw);
         outputTabNormal();
         // clear animation
         play = new SequentialTransition();

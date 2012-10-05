@@ -21,6 +21,7 @@ import org.netdance.napili.Napili
 import org.netdance.napili.Turtle
 import org.codehaus.groovy.control.customizers.ASTTransformationCustomizer
 import groovy.transform.TimedInterrupt
+import org.netdance.napili.NapiliOutput
 
 class BasicRunner {
 
@@ -39,7 +40,7 @@ class BasicRunner {
             script.setBinding(new BasicBinding(napili))
             script.run()
         } catch (Exception e) {
-            napili.println(e.getMessage())
+            NapiliOutput.println(e.getMessage())
             e.printStackTrace(System.out)
         }
     }
@@ -48,17 +49,15 @@ class BasicRunner {
     private static class BasicBinding extends Binding {
 
         Turtle turtle
-        Napili napili
 
         public BasicBinding(Napili napili) {
             super();
             turtle = new Turtle(napili)
-            this.napili = napili
         }
 
         public Object getVariable(String name) {
             if (name == 'out') {
-                return napili.getPrintWriter();
+                return NapiliOutput.getPrintWriter();
             }
             if (name == 'turtle') {
                 return turtle;
@@ -73,7 +72,7 @@ class BasicRunner {
 
         public void setVariable(String name, Object value) {
             if ("turtle".equals(name)) {
-                napili.println('Unable to set "turtle" to value' + value)
+                NapiliOutput.println('Unable to set "turtle" to value' + value)
                 return;
             }
             super.setVariable(name, value);
