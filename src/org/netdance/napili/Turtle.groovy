@@ -179,8 +179,8 @@ class Turtle {
         Timeline timeline = new Timeline();
         Rotate rot = new Rotate(0, 0, 0);
         turtleShape.getTransforms().add(rot);
-        KeyFrame rotkf = new KeyFrame(duration, new KeyValue(rot.angleProperty(), degrees));
-        timeline.keyFrames.add(rotkf);
+        KeyFrame rotationKeyFrame = new KeyFrame(duration, new KeyValue(rot.angleProperty(), degrees));
+        timeline.keyFrames.add(rotationKeyFrame);
 
         napili.addAnimation(timeline);
     }
