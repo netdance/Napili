@@ -35,14 +35,11 @@ class Turtle {
     private PenStatus penStatus = new PenStatus()
     private double speed = Napili.TURTLESPEED
     private Polygon turtleShape = new Polygon(-Napili.TURTLEWIDTH / 2, 0, 0, -Napili.TURTLEHEIGHT, Napili.TURTLEWIDTH / 2, 0);
-    private Napili napili;
-    def Object
 
-    Turtle(Napili napili) {
-        this.napili = napili;
+    Turtle() {
         turtleShape.setFill(Color.BLACK)
         home()
-        napili.addNode(turtleShape)
+        NapiliAnimation.addNode(turtleShape)
     }
 
     def propertyMissing(String name) {
@@ -93,14 +90,14 @@ class Turtle {
         Rotate rot = new Rotate(0, 0, 0);
         turtleShape.transforms.add(rot)
 
-        KeyFrame rotkf = new KeyFrame(Duration.millis(10), new KeyValue(rot.angleProperty(), degreeHomeCorrection));
+        KeyFrame rotationKeyFrame = new KeyFrame(Duration.millis(10), new KeyValue(rot.angleProperty(), degreeHomeCorrection));
 
         KeyFrame turtleX = new KeyFrame(Duration.millis(10), new KeyValue(turtleShape.translateXProperty(), location.x));
         KeyFrame turtleY = new KeyFrame(Duration.millis(10), new KeyValue(turtleShape.translateYProperty(), location.y));
 
-        timeline.getKeyFrames().addAll(turtleX, turtleY, rotkf);
+        timeline.getKeyFrames().addAll(turtleX, turtleY, rotationKeyFrame);
 
-        napili.addAnimation(timeline)
+        NapiliAnimation.addAnimation(timeline)
         return this
     }
 
@@ -108,14 +105,14 @@ class Turtle {
         Timeline timeline = new Timeline()
         KeyFrame kf = new KeyFrame(Duration.millis(10), new KeyValue(turtleShape.fillProperty(), Color.TRANSPARENT));
         timeline.getKeyFrames().add(kf)
-        napili.addAnimation(timeline)
+        NapiliAnimation.addAnimation(timeline)
     }
 
     def show() {
         Timeline timeline = new Timeline()
         KeyFrame kf = new KeyFrame(Duration.millis(10), new KeyValue(turtleShape.fillProperty(), Color.BLACK));
         timeline.getKeyFrames().add(kf)
-        napili.addAnimation(timeline)
+        NapiliAnimation.addAnimation(timeline)
     }
 
     def back(double distance) {
@@ -168,8 +165,8 @@ class Turtle {
         KeyFrame turtleY = new KeyFrame(duration, new KeyValue(turtleShape.translateYProperty(), y1));
         timeline.getKeyFrames().addAll(lineX, lineY, lineColor, turtleX, turtleY);
 
-        napili.addNode(line);
-        napili.addAnimation(timeline);
+        NapiliAnimation.addNode(line);
+        NapiliAnimation.addAnimation(timeline);
     }
 
     private def turn(double degrees) {
@@ -182,7 +179,7 @@ class Turtle {
         KeyFrame rotationKeyFrame = new KeyFrame(duration, new KeyValue(rot.angleProperty(), degrees));
         timeline.keyFrames.add(rotationKeyFrame);
 
-        napili.addAnimation(timeline);
+        NapiliAnimation.addAnimation(timeline);
     }
 
 

@@ -16,8 +16,6 @@
 
 package org.netdance.napili;
 
-import javafx.animation.Animation;
-import javafx.animation.SequentialTransition;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -73,13 +71,13 @@ public class Napili extends Application {
     // The script runner class name used to execute the turtle graphic scripts
     private final String runClass = "org.netdance.napili.language.BasicRunner";
 
-    private Group drawGroup = new Group();
+    //private Group drawGroup = new Group();
     private final Group holdingGroup = new Group();
-    private static SequentialTransition play = new SequentialTransition();
+    //private static SequentialTransition play = new SequentialTransition();
     private final static Tab outputTab = new Tab("Output");
     private static String initialProgram = (String) Circles.PROGRAM;
 
-    private final TextArea code = new TextArea();
+    private final static TextArea code = new TextArea();
 
 
     public static void main(String[] args) {
@@ -112,37 +110,18 @@ public class Napili extends Application {
         // setup drawGroup  - the Group that actually holds the drawings
         // it's held by a holding group, so that we can easily erase the drawing area
         // by dropping it and creating a new one
-        holdingGroup.getChildren().add(drawGroup);
+        NapiliAnimation.clear(holdingGroup);
         main.getChildren().add(holdingGroup);
 
         primaryStage.show();
     }
 
     /**
-     * Add a node to the drawing area.  Used primarily to add Line Objects.
-     *
-     * @param node - Node to add to drawing area
-     */
-    public void addNode(javafx.scene.Node node) {
-        drawGroup.getChildren().add(node);
-    }
-
-    /**
-     * Add an Animation to the Sequential animation list for later playback
-     *
-     * @param animation Animation to add
-     */
-    public void addAnimation(Animation animation) {
-        play.getChildren().add(animation);
-    }
-
-
-    /**
      * Set the value of the user code area to a script
      *
      * @param script String to set the code area to
      */
-    public void setCode(String script) {
+    public static void setCode(String script) {
         code.setText(script);
     }
 
@@ -151,7 +130,7 @@ public class Napili extends Application {
      *
      * @return The script contained in the user code area
      */
-    public String getCode() {
+    public static String getCode() {
         return code.getText();
     }
 
@@ -207,13 +186,13 @@ public class Napili extends Application {
                 // run user supplied script, adding animations into the sequence queue
                 try {
                     Class clazz = Class.forName(runClass);
-                    InvokerHelper.getMetaClass(clazz).invokeStaticMethod(clazz, "run", new Object[]{Napili.this});
+                    InvokerHelper.getMetaClass(clazz).invokeStaticMethod(clazz, "run", new Object[]{});
                 } catch (Exception ex) {
                     NapiliOutput.println(ex.getMessage());
                     return;
                 }
                 // play animations in the sequence
-                play.play();
+                NapiliAnimation.play();
                 NapiliOutput.flushOutput();
                 String outText = output.getText();
                 if (outText != null && outText.length() > 0) {
@@ -232,17 +211,12 @@ public class Napili extends Application {
         outputTab.setStyle("-fx-font-weight: normal;");
     }
 
-
-
     private void resetOutput() {
-        // clear screen
-        holdingGroup.getChildren().remove(drawGroup);
-        holdingGroup.getChildren().add(drawGroup = new Group());
+        // clear screen & animations
+        NapiliAnimation.clear(holdingGroup);
         // clear output
         NapiliOutput.resetOutput();
         output.setText("");
         outputTabNormal();
-        // clear animation
-        play = new SequentialTransition();
     }
 }

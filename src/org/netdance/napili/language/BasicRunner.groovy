@@ -25,8 +25,8 @@ import org.netdance.napili.NapiliOutput
 
 class BasicRunner {
 
-    static def run(Napili napili) {
-        String scriptStr = napili.code;
+    static def run() {
+        String scriptStr = Napili.code;
         if (scriptStr == null) scriptStr = ''
         CompilerConfiguration config = new CompilerConfiguration()
         config.setScriptBaseClass("org.netdance.napili.language.TurtleDelegateBaseScript")
@@ -37,7 +37,7 @@ class BasicRunner {
         GroovyShell shell = new GroovyShell(config)
         try {
             Script script = shell.parse(scriptStr)
-            script.setBinding(new BasicBinding(napili))
+            script.setBinding(new BasicBinding())
             script.run()
         } catch (Exception e) {
             NapiliOutput.println(e.getMessage())
@@ -50,9 +50,9 @@ class BasicRunner {
 
         Turtle turtle
 
-        public BasicBinding(Napili napili) {
+        public BasicBinding() {
             super();
-            turtle = new Turtle(napili)
+            turtle = new Turtle()
         }
 
         public Object getVariable(String name) {
