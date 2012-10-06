@@ -67,6 +67,9 @@ public class Napili extends Application {
 
     public static final long TIMEOUT = 15L;
 
+    protected final static TextArea output = new TextArea();
+    protected Stage primaryStage;
+
     // The script runner class name used to execute the turtle graphic scripts
     private final String runClass = "org.netdance.napili.language.BasicRunner";
 
@@ -74,11 +77,9 @@ public class Napili extends Application {
     private final Group holdingGroup = new Group();
     private static SequentialTransition play = new SequentialTransition();
     private final static Tab outputTab = new Tab("Output");
-    protected final static TextArea output = new TextArea();
     private static String initialProgram = (String) Circles.PROGRAM;
 
     private final TextArea code = new TextArea();
-    private Stage primaryStage;
 
 
     public static void main(String[] args) {
