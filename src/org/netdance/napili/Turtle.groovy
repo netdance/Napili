@@ -43,18 +43,14 @@ class Turtle {
     }
 
     def propertyMissing(String name) {
-
         if (name == 'turtle') {
             return this;
         }
-
         // treat all no-arg methods as properties
         if (this.metaClass.respondsTo(this, name)) {
             return this.metaClass.invokeMethod(this, name)
         }
-
         throw new MissingPropertyException("No property on Turtle named '$name'")
-
     }
 
     def left(double degrees) {
