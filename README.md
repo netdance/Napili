@@ -48,7 +48,13 @@ To build and run Napili, type:
 * speed - the speed that the turtle draws.  Takes one numeric argument,
    higher is faster
 
-### Miscellaneous
+## Known Bugs
+
+There's a bug in JavaFX on OS X 10.8, where Save / Load file invocations can crash the VM.  A fairly horrific bug,
+but since it's only on one OS, I've left the Save / Load functionality in.  This bug is already fixed in the latest
+JavaFX build.
+
+## Miscellaneous
 
 Napili's code comes with IntelliJ IDEA and Netbeans setups, as well as the gradle setup that I use.  In IDEA, 
 just use 'gradlew idea' to create the IDEA setup, then after opening, use the default configuration to build.  
