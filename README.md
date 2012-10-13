@@ -50,9 +50,10 @@ To build and run Napili, type:
 
 ## Known Bugs
 
-There's a bug in JavaFX on OS X 10.8, where Save / Load file invocations can crash the VM.  A fairly horrific bug,
-but since it's only on one OS, I've left the Save / Load functionality in.  This bug is already fixed in the latest
-JavaFX build.
+There's a [known bug](http://docs.oracle.com/javafx/scenebuilder/1/release_notes_1-0/jsbpub-release_notes_1-0.htm) in
+JavaFX on OS X 10.8, where Save / Load file invocations can crash the VM.  A fairly horrific bug,
+but since it's only on one OS (albeit the one I use), I've left the Save / Load functionality in.  This bug is already
+fixed in the latest JavaFX build, so the next update of JavaFX should address this.
 
 ## Miscellaneous
 
