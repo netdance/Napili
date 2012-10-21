@@ -38,6 +38,7 @@ buildscript {
             javaHome = System.properties['java.home']
         }
         if (javaHome) {
+            println "Java Home is set to ${javaHome}"
             def javafxJar = "${javaHome}/lib/jfxrt.jar"
             if ((new File(javafxJar)).exists()) {
                 ext.javafxJar = javafxJar
@@ -58,7 +59,7 @@ buildscript {
     catch (MissingPropertyException ignore) {
         println """
     Please set the environment variable JAVAFX_HOME or
-    JAVA_HOME to a directory that contains rt/lib/jfxrt.jar
+    JAVA_HOME to a directory that contains rt/lib/jfxrt.jar or lib/jfxrt.jar
     of JavaFX version ${requiredJavaFxVersion}."""
         System.exit 1
     }
