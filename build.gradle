@@ -38,9 +38,15 @@ buildscript {
             javaHome = System.properties['java.home']
         }
         if (javaHome) {
-            final javafxJar = "${javaHome}/lib/jfxrt.jar"
-            if ((new File(javafxJar)).exists())
+            def javafxJar = "${javaHome}/lib/jfxrt.jar"
+            if ((new File(javafxJar)).exists()) {
                 ext.javafxJar = javafxJar
+	    } else {
+              // if its set to JDK, look for JRE
+              javafxJar = "${javaHome}/jre/lib/jfxrt.jar"
+              if ((new File(javafxJar)).exists()) 
+                ext.javafxJar = javafxJar
+            }
         }
     }
     try {
